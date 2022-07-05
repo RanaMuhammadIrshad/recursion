@@ -12,7 +12,7 @@
 ```
  */
 
-console.log(`*******01*******`);
+console.log(`*******01-Method-01*******`);
 const array = [1, 2, 3, 4, 5, 6];
 
 const sumOfArrNum = (array) =>
@@ -20,6 +20,17 @@ const sumOfArrNum = (array) =>
 
 const returnedSum = sumOfArrNum(array);
 console.log(returnedSum);
+
+console.log(`*******01-Method-02*******`);
+const sum = function (arr) {
+  if (arr.length === 1) {
+    return arr[0];
+  }
+
+  return arr.pop() + sum(arr);
+};
+let result = sum(array);
+console.log(result);
 
 /* 
 # 2- Recursion
@@ -35,14 +46,14 @@ console.log(returnedSum);
 ``` */
 console.log(`*******02*******`);
 function factorial(num) {
-  if (num === 1) {
+  if (num === 0) {
     return 1;
   }
 
   return num * factorial(num - 1);
 }
 
-let returnedFactorial = factorial(5);
+let returnedFactorial = factorial(3);
 console.log(returnedFactorial);
 
 /* 
@@ -60,10 +71,22 @@ Expected Output: dlrow olleh
     reverse(string)  // return dlrow olleh
 ```
  */
-console.log(`*******03*******`);
+console.log(`*******03-Method-01*******`);
 const reverse = function (str) {
   return str ? reverse(str.substr(1)) + str[0] : str;
 };
 
 const reversedString = reverse("Hello World");
 console.log(reversedString);
+
+console.log(`*******03-Method-02*******`);
+const reverseString = function (str) {
+  if (str === "") {
+    return "";
+  }
+
+  return reverseString(str.substr(1)) + str.charAt(0);
+};
+
+const retString = reverseString("hello world");
+console.log(retString);
